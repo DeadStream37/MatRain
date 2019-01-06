@@ -1,0 +1,92 @@
+body {
+  margin: 0 50px;
+  font-family: 'Roboto', 'Open Sans', 'sans-serif';
+  background-color: #fff;
+  color: #444;
+}
+
+h1, p {
+  margin: 0 0 1em 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50px 3fr 1fr 50px;
+  grid-template-rows: max-content auto max-content;
+  grid-template-areas:
+    ". head head ."
+    ". main menu ."
+    ". foot foot .";
+}
+
+.wrapper > * {
+  background-color: #444;
+  color: #fff;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: max-content auto max-content max-content;
+    grid-template-areas:
+      ". head ."
+      ". main ."
+      ". menu ."
+      ". foot .";
+  }
+}
+
+.head {
+  grid-area: head;
+  font-size: 4vw;
+}
+
+.foot {
+  grid-area: foot;
+  font-size: 1vw;
+}
+
+.demo {
+  display: grid;
+  grid-area: main;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-gap: 5px;
+  background-color: #888;
+}
+
+.menu {
+  grid-area: menu;
+  padding: 0;
+  background: #222;
+  font-size: 2vw;
+}
+
+.menu a {
+  background-color: #222;
+  color: white;
+  text-decoration: none;
+  text-align: right;
+  padding: 10px 15px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  display: block; /* Make the buttons appear below each other */
+}
+
+.menu a:hover {
+  background-color: #666;
+}
+
+.prog {
+  width: 600px;
+  height: 400px;
+}
+
+.desc {
+  padding: 10px;
+  grid-column: 1 / -1;
+  background-color: #777;
+}
